@@ -1,6 +1,6 @@
 import { Picker } from '@react-native-picker/picker'
 import React, { useState } from 'react';
-import { View, Text, FlatList, Dimensions } from 'react-native';
+import { View, Text, FlatList, Dimensions, Modal } from 'react-native';
 
 import {
     Container,
@@ -12,9 +12,12 @@ import {
     MenuItem
 } from './styles'
 
+import SuspendedCart from '../../components/SuspendedCart';
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState();
+    const [cartItems, setCartItems] = useState([{ ok: true }, { ok: true }, { ok: true }, { ok: true }]);
+    const [modalCartIsVisible, setModalCartIsVisible] = useState(true);
 
     const PickerComponent = <Picker >
         <Picker.Item label="Categoria" value="qualquer" />
@@ -34,7 +37,9 @@ export default function Home() {
                 <Search placeholder='Nome ou código' />
                 <Category>{PickerComponent}</Category>
             </SearchContainer>
-            <MenuContainer showsVerticalScrollIndicator={false} numColumns={4} data={MenuList} renderItem={({ item }) => <MenuItem Dimensions={Dimensions.get('window').width * .9 / 4}></MenuItem>} horizontal={false} />
+            <MenuContainer contentContainerStyle={{ padding: 10, justifyContent: 'center', alignItems: 'center' }} showsVerticalScrollIndicator={false} numColumns={4} data={MenuList} renderItem={({ item }) => <MenuItem Dimensions={Dimensions.get('window').width * .9 / 4}></MenuItem>} horizontal={false} />
+            {modalCartIsVisible ? (<SuspendedCart />) : ''}
+
         </Container>
     );
 }

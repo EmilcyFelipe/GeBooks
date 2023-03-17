@@ -17,7 +17,7 @@ export const SearchContainer = styled.View`
     width: 90%;
     align-self: center;
     background-color: #fff;
-    elevation: 2px;
+    elevation: 2;
     border-radius: 4px;
     padding: 15px 10px;
     flex-direction: row;
@@ -35,9 +35,12 @@ export const Search = styled.TextInput.attrs({
 `;
 
 export const Category = styled.View`
-   width:200;
+   width:200px;
    justify-content: space-between;
-    background-color: red;
+`;
+
+export const MenuWrapper = styled.View`
+    
 `;
 
 export const MenuContainer = styled.FlatList`
@@ -47,13 +50,13 @@ export const MenuContainer = styled.FlatList`
     align-self: center;
     background-color: red;
     border-radius: 4px;
-    elevation:10px;
+    elevation:10;
     `
 export const MenuItem = styled.TouchableOpacity`
-        width: ${props => props.Dimensions * .9};
-        height:${props => props.Dimensions * .9};
+        width: ${props => props.Dimensions * .9}px;
+        height:${props => props.Dimensions * .9}px;
         margin-left: 2%;
-        margin-top:2%;
+        margin-top: 2%;
         justify-content: space-between;
         background-color: #fff;
         border-radius: 4px;
