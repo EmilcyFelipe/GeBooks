@@ -14,13 +14,16 @@ import {
 } from './styles'
 
 import SuspendedCart from '../../components/SuspendedCart';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
     const [selectedCategory, setSelectedCategory] = useState();
     const [cartItems, setCartItems] = useState([{ ok: true }, { ok: true }, { ok: true }, { ok: true }]);
     const [modalCartIsVisible, setModalCartIsVisible] = useState(true);
 
-    const PickerComponent = <Picker >
+    const navigation = useNavigation();
+
+    const PickerComponent = <Picker style={{ width: 200, height: 50 }}>
         <Picker.Item label="Categoria" value="qualquer" />
         <Picker.Item label="Feijão" value="qualquer1" />
         <Picker.Item label="Feijão" value="qualquer2" />
@@ -36,10 +39,10 @@ export default function Home() {
             <Title>Vender</Title>
             <SearchContainer>
                 <Search placeholder='Nome ou código' />
-                <Category>{PickerComponent}</Category>
+                <Category >{PickerComponent}</Category>
             </SearchContainer>
             <MenuContainer contentContainerStyle={{ justifyContent: 'center', alignItems: 'center' }} showsVerticalScrollIndicator={false} numColumns={4} data={MenuList} renderItem={({ item }) => <MenuItem dimensions={Dimensions.get('window').width * 0.9 / 4}></MenuItem>} horizontal={false} />
-            {modalCartIsVisible ? (<SuspendedCart />) : ''}
+            {modalCartIsVisible ? (<SuspendedCart nextPage="SelectCustomer" />) : ''}
 
         </Container>
     );

@@ -3,7 +3,6 @@ import styled from 'styled-components/native';
 export const Container = styled.View`
     flex: 1;
     background-color: #F3F3F3;
-    
 `;
 
 export const Title = styled.Text`
@@ -36,12 +35,8 @@ export const Search = styled.TextInput.attrs({
 `;
 
 export const Category = styled.View`
-   width:200px;
+   width: 400px;
    justify-content: space-between;
-`;
-
-export const MenuWrapper = styled.View`
-    
 `;
 
 export const MenuContainer = styled.FlatList`

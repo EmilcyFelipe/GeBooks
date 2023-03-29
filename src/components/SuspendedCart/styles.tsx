@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
 export const SuspendedCartContainer = styled.View`
-    height: 150px; 
+    height: 100px; 
     width: 90%;
     align-self: center;
     align-items: flex-start;
