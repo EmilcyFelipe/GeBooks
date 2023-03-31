@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 export const Container = styled.View`
     width: 90%;
     background-color:#D9D9D9;
-    height: 75%;
     padding-top: 20px;
+    max-height: 75%;
     padding-bottom: 20px;
     align-self: center;
     margin-top: 40px;
@@ -25,17 +25,19 @@ export const ClientInput = styled.TextInput`
 
 export const CustomersListWrapper = styled.ScrollView`
     margin-top: 30px;
-    width: 90%;
-    flex: 1;
+    width: 100%;
     align-self:center;
-
 `;
 
-export const CustomersItem = styled.View`
-    width: 100%;
+export const CustomersItem = styled.TouchableOpacity`
+    width: 90%;
     padding: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
     background-color: #fff;
     border-top-width: 2px;
     border-top-style: solid;
-    border-top-color: #8E8E8E;
+    border-top-color: #b3b3b3;
 `
